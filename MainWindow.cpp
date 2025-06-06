@@ -43,7 +43,6 @@ void MainWindow::initUdp()
 
 void MainWindow::closeEvent(QCloseEvent *e)
 {
-    Q_UNUSED(e);
     thread->stop();
 }
 

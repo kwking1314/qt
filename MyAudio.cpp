@@ -2,8 +2,8 @@
 #include "PathDef.h"
 #include <QDebug>
 
-//#define AUDIO_PATH "D:\\worktools\\aihome\\audiofile.pcm"
-#define AUDIO_PATH MODULE_PATH "/audiofile.pcm"
+//#define AUDIO_PATH "C:/Users/hking123456/Desktop/shixun/aihome/audiofile.pcm"
+#define AUDIO_PATH MODULE_PATH"/audiofile.pcm"
 
 void MyAudio::startAudio()
 {

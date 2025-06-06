@@ -35,8 +35,8 @@ FORMS += \
     MainWindow.ui
 
 # 配置python环境
-INCLUDEPATH +=C:/Users/hking123456/Desktop/shixun/aihome/AI_env/include
-LIBS += -LC:/Users/hking123456/Desktop/shixun/aihome/AI_env/libs -lpython311
+INCLUDEPATH +=C:\Users\hking123456\Desktop\shixun\aihome\AI_env\include
+LIBS += -LC:\Users\hking123456\Desktop\shixun\aihome\AI_env\libs -lpython311
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

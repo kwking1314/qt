@@ -2,7 +2,7 @@
 #include "PathDef.h"
 #include <QDebug>
 
-#define MODULE_NAME "forcpp"
+#define MODULE_NAME "aihdakd"
 
 void AIThread::stop()
 {
@@ -84,7 +84,8 @@ void AIThread::initPyApi()
     }
     PyRun_SimpleString("import sys");
     PyRun_SimpleString("sys.path.append('" MODULE_PATH "')");
-    PyRun_SimpleString("sys.path.append('" MODULE_PATH "lora_output')");
+    PyRun_SimpleString("sys.path.append('" MODULE_PATH "/lora_output')");
+    PyRun_SimpleString("print(sys.path)");
     moudle = PyImport_ImportModule(MODULE_NAME);
     if(moudle == nullptr)
     {
@@ -107,13 +108,14 @@ void AIThread::initPyApi()
         Py_Finalize();
     }
     // 访问语音识别函数
-    doAutioFun = PyObject_GetAttrString(moudle,"doAudio");
+   doAutioFun = PyObject_GetAttrString(moudle,"doAudio");
     if(!doAutioFun || !PyCallable_Check(doAutioFun))
     {
         qDebug() << "doAudio fun error";
         Py_Finalize();
     }
-    
+
+
     //加载大模型
     PyObject* args = PyTuple_New(1);
     PyTuple_SetItem(args,0,Py_BuildValue("s",MODULE_PATH));
